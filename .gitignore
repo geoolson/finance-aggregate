@@ -1,4 +1,5 @@
 *.csv
 *.env
+output.json
 node_modules/
 dist/
