@@ -19,17 +19,17 @@ const subscriptions: Subscription[] = fs
     };
   });
 
-const annualCost = subscriptions.reduce((acc, sub) => {
+const annualCost = subscriptions.reduce((sum, sub) => {
   switch (sub.frequency) {
     case "monthly":
-      return acc + Math.abs(sub.cost) * 12;
+      return sum + Math.abs(sub.cost) * 12;
     case "annual":
-      return acc + Math.abs(sub.cost);
+      return sum + Math.abs(sub.cost);
   }
 }, 0);
 
 console.log("===Subscription Services===");
-console.log("Frequency\tcost");
+console.log("Frequency\tCost");
 console.log(
   `Monthly\t\t${(annualCost / 12).toLocaleString("en-US", {
     style: "currency",
@@ -37,7 +37,7 @@ console.log(
   })}`
 );
 console.log(
-  `Annual\t\t${annualCost.toLocaleString("en-US", {
+  `Annually\t${annualCost.toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
   })}`

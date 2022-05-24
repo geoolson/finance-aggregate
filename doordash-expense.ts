@@ -12,19 +12,19 @@ const total = Math.abs(
         transaction.date <= endDate &&
         transaction.description?.toLowerCase().includes("doordash")
     )
-    .reduce((acc, transaction) => acc + transaction.amount, 0)
+    .reduce((sum, transaction) => sum + transaction.amount, 0)
 );
 
 console.log("====Doordash Expense====");
-console.log("frequency\tcost");
+console.log("Frequency\tCost");
 console.log(
-  `annually\t${total.toLocaleString("en-US", {
+  `Annually\t${total.toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
   })}`
 );
 console.log(
-  `monthly\t\t${(total / 12).toLocaleString("en-US", {
+  `Monthly\t\t${(total / 12).toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
   })}`
