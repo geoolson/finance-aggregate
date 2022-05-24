@@ -28,6 +28,7 @@ const annualCost = subscriptions.reduce((acc, sub) => {
   }
 }, 0);
 
+console.log("===Subscription Services===");
 console.log("Frequency\tcost");
 console.log(
   `Monthly\t\t${(annualCost / 12).toLocaleString("en-US", {
