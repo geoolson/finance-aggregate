@@ -14,7 +14,7 @@ const subscriptions: Subscription[] = fs
     const [name, cost, frequency] = record.split('","');
     return {
       name: name?.slice(1),
-      frequency: frequency?.slice(0, -1) as "monthly" | "annual",
+      frequency: frequency?.slice(0, -1) as Subscription["frequency"],
       cost: parseFloat(cost),
     };
   });
